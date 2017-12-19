@@ -1,0 +1,14 @@
+development: &defaults
+  adapter: postgresql
+  encoding: unicode
+  url: <%= ENV.fetch('DATABASE_URL', 'postgres://localhost:5432/ap_storage_development?pool=50') %>
+
+test:
+  <<: *defaults
+  url: <%= ENV.fetch('DATABASE_URL', "postgres://localhost:5432/ap_storage_test#{ENV['TEST_ENV_NUMBER']}") %>
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults

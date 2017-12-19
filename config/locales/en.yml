@@ -1,0 +1,40 @@
+en:
+  application:
+    search: Search
+    code: Code
+    name: Name
+    price: Price
+    comments: Comments
+    total_amount: Total amount
+    back: Back
+  products: &products
+    product_group: Product Group
+    receipt_date: Receipt Date
+    stock_balance: Stock Balance
+    rack: Rack
+    row: Row
+    shelf: Shelf
+    price: Price
+    sale_price: Sale Price
+    comment: Comment
+    description: Description
+    height: Height
+    total_amount: Total Amount
+    showcase: Showcase
+    measured: Measured
+    workshop: Workshop
+    purchase_price: Purchase Price
+    calculated_price: Calculated Price
+    hidden_comments: Hidden Comments
+    ratio: Ratio
+    code: Code
+    name: Name
+    new: New Product
+    create: Create Product
+    edit: Edit
+    show: Show
+  activerecord:
+    models:
+      product: Product
+    attributes:
+      product: *products
