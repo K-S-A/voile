@@ -1,0 +1,79 @@
+= form_with url: url_for, method: :get, local: true do |f|
+  .form-group
+    .input-group.input-group-lg
+      = text_field_tag 'query', query, class: 'form-control input-lg typeahead', autocomplete: 'off', data: { 'typeahead-autofocus': true, 'typeahead-name' => 'products', 'typeahead-source' => Product.pluck(:code, :name).flatten }
+      .input-group-btn
+        = f.submit th('#search'), class: 'btn btn-success btn-lg'
+
+= link_to th('#new'), new_product_path
+
+%table.table.table-striped.table-bordered.table-hover
+  %thead.thead-default
+    %tr
+      %th= th('#code')
+      %th= th('#name')
+      %th= th('#stock_balance')
+      %th= th('#price')
+      %th= th('#comments')
+  %tbody
+    = render partial: 'row', collection: collection, as: :resource, cached: true
+-# %h1 Listing products
+-#
+-# %table
+-#   %thead
+-#     %tr
+-#       %th Product group
+-#       %th Name
+-#       %th Description
+-#       %th Code
+-#       %th Receipt date
+-#       %th Stock balance
+-#       %th Rack
+-#       %th Row
+-#       %th Shelf
+-#       %th Price
+-#       %th Sale price
+-#       %th Comment
+-#       %th Height
+-#       %th Total amount
+-#       %th Showcase
+-#       %th Measured
+-#       %th Workshop
+-#       %th Purchase price
+-#       %th Ratio
+-#       %th Calculated price
+-#       %th Hidden comments
+-#       %th
+-#       %th
+-#       %th
+-#
+-#   %tbody
+-#     -# - @products.each do |product|
+-#     -#   %tr
+-#     -#     %td= product.product_group
+-#     -#     %td= product.name
+-#     -#     %td= product.description
+-#     -#     %td= product.code
+-#     -#     %td= product.receipt_date
+-#     -#     %td= product.stock_balance
+-#     -#     %td= product.rack
+-#     -#     %td= product.row
+-#     -#     %td= product.shelf
+-#     -#     %td= product.price
+-#     -#     %td= product.sale_price
+-#     -#     %td= product.comment
+-#     -#     %td= product.height
+-#     -#     %td= product.total_amount
+-#     -#     %td= product.showcase
+-#     -#     %td= product.measured
+-#     -#     %td= product.workshop
+-#     -#     %td= product.purchase_price
+-#     -#     %td= product.ratio
+-#     -#     %td= product.calculated_price
+-#     -#     %td= product.hidden_comments
+-#     -#     %td= link_to 'Show', product
+-#     -#     %td= link_to 'Edit', edit_product_path(product)
+-#     -#     %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+-#
+-# %br
+-#

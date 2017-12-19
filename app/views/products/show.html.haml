@@ -1,0 +1,71 @@
+%p#notice= notice
+
+= link_to th('#edit.button'), edit_product_path(resource)
+\|
+= link_to th('#back'), products_path
+
+%p
+%dl.dl-horizontal
+  - if resource.product_group
+    %dt= th('#product_group')
+    %dd= display_name(resource.product_group)
+
+  %dt= th('#name')
+  %dd= resource.name
+
+  %dt= th('#description')
+  %dd= resource.description
+
+  %dt= th('#code')
+  %dd= resource.code
+
+  %dt= th('#receipt_date')
+  %dd= resource.receipt_date
+
+  %dt= th('#stock_balance')
+  %dd= resource.remaining
+
+  %dt= th('#rack')
+  %dd= resource.rack
+
+  %dt= th('#row')
+  %dd= resource.row
+
+  %dt= th('#shelf')
+  %dd= resource.shelf
+
+  %dt= th('#price')
+  %dd= resource.price
+
+  %dt= th('#sale_price')
+  %dd= resource.sale_price
+
+  %dt= th('#comment')
+  %dd= resource.comment
+
+  %dt= th('#height')
+  %dd= resource.height
+
+  %dt= th('#total_amount')
+  %dd= resource.total_amount
+
+  %dt= th('#showcase')
+  %dd= resource.showcase
+
+  %dt= th('#measured')
+  %dd= resource.measured
+
+  %dt= th('#workshop')
+  %dd= resource.workshop
+
+  %dt= th('#purchase_price')
+  %dd= resource.purchase_price
+
+  %dt= th('#ratio')
+  %dd= resource.ratio
+
+  %dt= th('#calculated_price')
+  %dd= resource.calculated_price
+
+  %dt= th('#hidden_comments')
+  %dd= resource.hidden_comments

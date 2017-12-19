@@ -1,0 +1,33 @@
+@import 'bootstrap';
+@import 'typeaheadjs';
+
+.translation_missing {
+  color: #ff0000;
+  -webkit-animation: translation_missing_pulse 1s infinite alternate;
+}
+
+@-webkit-keyframes translation_missing_pulse {
+  0% {color: #ff0000;}
+ 25% {color: #f56363;}
+ 50% {color: #c88686;}
+ 75% {color: #923232;}
+ 95% {color: #d20c0c;}
+}
+
+
+.input-group-lg span.twitter-typeahead {
+  .tt-menu {
+    top: 4rem !important;
+    font-size: 3rem;
+  }
+}
+
+body {
+  padding-top: 20px;
+}
+
+@media (max-width: 980px) {
+  body {
+    padding-top: 15px;
+  }
+}

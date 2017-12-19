@@ -1,0 +1,29 @@
+= simple_form_for resource do |f|
+  - if resource.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(resource.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - resource.errors.full_messages.each do |msg|
+          %li= msg
+  = f.association :product_group, collection: ProductGroup.all, label_method: :name, value_method: :id
+  = f.input :code, required: true
+  = f.input :name, required: true
+  = f.input :description, as: :text
+  = f.input :receipt_date, as: :date
+  = f.input :stock_balance
+  = f.input :rack
+  = f.input :row
+  = f.input :shelf
+  = f.input :price
+  = f.input :sale_price
+  = f.input :comment
+  = f.input :height
+  = f.input :total_amount
+  = f.input :showcase
+  = f.input :measured, as: :date
+  = f.input :workshop
+  = f.input :purchase_price
+  = f.input :ratio
+  = f.input :calculated_price
+  = f.input :hidden_comments
+  = f.button :submit

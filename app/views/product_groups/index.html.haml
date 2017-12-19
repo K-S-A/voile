@@ -1,0 +1,25 @@
+%h1 Listing product_groups
+
+%table
+  %thead
+    %tr
+      %th Slug
+      %th Name
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @product_groups.each do |product_group|
+      %tr
+        %td= product_group.slug
+        %td= product_group.name
+        %td= product_group.description
+        %td= link_to 'Show', product_group
+        %td= link_to 'Edit', edit_product_group_path(product_group)
+        %td= link_to 'Destroy', product_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product group', new_product_group_path
